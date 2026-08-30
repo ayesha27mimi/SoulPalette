@@ -1,0 +1,137 @@
+/* ===== SoulPalette — shared styles ===== */
+:root {
+  --sp-bg: #faf7f2;
+  --sp-text: #33312e;
+  --sp-muted: #746f68;
+  --sp-nav: #a0c994;
+  --sp-sage: #7f9271;
+  --sp-terracotta: #bd6a4d;
+  --sp-mustard: #c99a48;
+  --sp-lavender: #93839f;
+  --sp-teal: #5f8686;
+  --sp-orange: #c97a4a;
+}
+
+html, body { height: 100%; }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: var(--sp-bg);
+  color: var(--sp-text);
+  line-height: 1.65;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+}
+main { flex: 1 0 auto; }
+
+/* Navbar — plain, quiet, text-first */
+.navbar {
+  background: var(--sp-nav);
+}
+.navbar-brand {
+  font-family: 'Lora', serif;
+  letter-spacing: .02em;
+}
+.navbar-brand, .nav-link {
+  color: #f2efe9 !important;
+}
+.nav-link {
+  font-size: .92rem;
+  letter-spacing: .02em;
+  opacity: .85;
+}
+.nav-link:hover { opacity: 1; }
+.nav-link.active {
+  opacity: 1;
+  border-bottom: 1px solid #f2efe9;
+}
+
+/* Hero */
+.hero {
+  padding: 4.5rem 1rem;
+  background-image: linear-gradient(rgba(250,247,242,.9), rgba(250,247,242,.9)),
+    url('https://images.unsplash.com/photo-1599270606287-331b4f5d0e02?auto=format&fit=crop&w=1600&q=60');
+  background-size: cover;
+  background-position: center;
+}
+.hero h1 {
+  font-size: 2.1rem;
+}
+.hero p {
+  max-width: 620px;
+  margin: 1rem auto 0;
+  color: var(--sp-muted);
+}
+
+/* Photo strip on flower cards */
+.sp-img {
+  height: 110px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px 4px 0 0;
+}
+
+/* Cards — soft tint background, accent border, no heavy shadow */
+.sp-card {
+  background: #fff;
+  border: none;
+  border-left: 4px solid var(--sp-muted);
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.05);
+  transition: box-shadow .2s ease;
+  height: 100%;
+}
+.sp-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+.sp-card p:last-child { margin-bottom: 0; }
+
+.bg-yellow { background: #fbf3e4; border-left-color: var(--sp-mustard); }
+.bg-red    { background: #f7ebe6; border-left-color: var(--sp-terracotta); }
+.bg-purple { background: #f1eef4; border-left-color: var(--sp-lavender); }
+.bg-green  { background: #eef2ea; border-left-color: var(--sp-sage); }
+.bg-blue   { background: #eaf1f1; border-left-color: var(--sp-teal); }
+.bg-orange { background: #f7ede1; border-left-color: var(--sp-orange); }
+
+/* Buttons */
+.btn-soul {
+  border-radius: 4px;
+  font-weight: 600;
+  border: 1px solid var(--sp-nav);
+  padding: .55rem 1.3rem;
+  color: var(--sp-nav);
+  background: transparent;
+}
+.btn-soul:hover {
+  background: var(--sp-nav);
+  color: #ebe3e3;
+}
+
+/* Quiz option buttons — muted, text-first */
+.btn-check + label.opt {
+  border-radius: 4px;
+  border: 1px solid #d8d3c8;
+  color: var(--sp-text);
+  background: #fff;
+  font-size: .92rem;
+  padding: .5rem 1rem;
+}
+.btn-check:checked + label.opt {
+  background: var(--sp-nav);
+  color: #facbcb;
+  border-color: var(--sp-nav);
+}
+
+#resultBox { display: none; }
+
+footer {
+  flex-shrink: 0;
+  background: var(--sp-nav);
+  color: #f1ece0;
+  padding: 1.4rem 0;
+  font-size: .88rem;
+}

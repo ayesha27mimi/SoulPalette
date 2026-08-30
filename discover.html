@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SoulPalette | Discover</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">SoulPalette</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="moods.html">Moods</a></li>
+        <li class="nav-item"><a class="nav-link" href="colors.html">Colors</a></li>
+        <li class="nav-item"><a class="nav-link" href="flowers.html">Flowers</a></li>
+        <li class="nav-item"><a class="nav-link" href="discover.html">Discover</a></li>
+        <li class="nav-item"><a class="nav-link" href="journal.html">Journal</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-grow-1">
+<div class="container my-5" style="max-width:700px;">
+  <h2 class="mb-2">Discover</h2>
+  <p class="text-muted mb-4">Four short questions. Answer honestly rather than aspirationally — there's no wrong result.</p>
+
+  <form id="quizForm">
+    <div class="mb-4">
+      <p class="fw-semibold mb-2">Your ideal weekend looks like</p>
+      <div class="d-flex flex-wrap gap-2">
+        <input type="radio" class="btn-check" name="q1" id="q1a" value="energetic" autocomplete="off">
+        <label class="opt" for="q1a">A party, or something with music and people</label>
+        <input type="radio" class="btn-check" name="q1" id="q1b" value="peaceful" autocomplete="off">
+        <label class="opt" for="q1b">A book and a quiet room</label>
+        <input type="radio" class="btn-check" name="q1" id="q1c" value="passionate" autocomplete="off">
+        <label class="opt" for="q1c">A long, honest conversation</label>
+        <input type="radio" class="btn-check" name="q1" id="q1d" value="calm" autocomplete="off">
+        <label class="opt" for="q1d">A walk with nowhere to be</label>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <p class="fw-semibold mb-2">The color you keep noticing lately</p>
+      <div class="d-flex flex-wrap gap-2">
+        <input type="radio" class="btn-check" name="q2" id="q2a" value="energetic" autocomplete="off">
+        <label class="opt" for="q2a">Yellow</label>
+        <input type="radio" class="btn-check" name="q2" id="q2b" value="peaceful" autocomplete="off">
+        <label class="opt" for="q2b">Purple</label>
+        <input type="radio" class="btn-check" name="q2" id="q2c" value="passionate" autocomplete="off">
+        <label class="opt" for="q2c">Red</label>
+        <input type="radio" class="btn-check" name="q2" id="q2d" value="calm" autocomplete="off">
+        <label class="opt" for="q2d">Green</label>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <p class="fw-semibold mb-2">If you could leave tomorrow, you'd choose</p>
+      <div class="d-flex flex-wrap gap-2">
+        <input type="radio" class="btn-check" name="q3" id="q3a" value="energetic" autocomplete="off">
+        <label class="opt" for="q3a">Somewhere new and a little chaotic</label>
+        <input type="radio" class="btn-check" name="q3" id="q3b" value="peaceful" autocomplete="off">
+        <label class="opt" for="q3b">A quiet retreat, no itinerary</label>
+        <input type="radio" class="btn-check" name="q3" id="q3c" value="passionate" autocomplete="off">
+        <label class="opt" for="q3c">Somewhere with someone who matters</label>
+        <input type="radio" class="btn-check" name="q3" id="q3d" value="calm" autocomplete="off">
+        <label class="opt" for="q3d">The forest, alone</label>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <p class="fw-semibold mb-2">When something's weighing on you, you tend to</p>
+      <div class="d-flex flex-wrap gap-2">
+        <input type="radio" class="btn-check" name="q4" id="q4a" value="energetic" autocomplete="off">
+        <label class="opt" for="q4a">Move , walk it off, work it out</label>
+        <input type="radio" class="btn-check" name="q4" id="q4b" value="peaceful" autocomplete="off">
+        <label class="opt" for="q4b">Sit with it quietly</label>
+        <input type="radio" class="btn-check" name="q4" id="q4c" value="passionate" autocomplete="off">
+        <label class="opt" for="q4c">Talk it through with someone</label>
+        <input type="radio" class="btn-check" name="q4" id="q4d" value="calm" autocomplete="off">
+        <label class="opt" for="q4d">Step outside, away from people</label>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-soul" onclick="runQuiz()">See my result</button>
+    <p id="quizWarning" class="text-danger mt-2" style="display:none;">
+      Please answer all four questions.
+    </p>
+  </form>
+
+  <div id="resultBox" class="sp-card p-4 mt-4"></div>
+</div>
+</main>
+
+<footer class="text-center">
+  <p class="mb-0">SoulPalette — a small space for noticing your mood, color, and flower.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
