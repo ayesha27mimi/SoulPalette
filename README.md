@@ -30,6 +30,7 @@ Color
 Flower
   ↓
 Personality
+```
 ## Screenshots
 
 ### Home Page
